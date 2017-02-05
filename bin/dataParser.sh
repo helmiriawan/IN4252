@@ -1,7 +1,14 @@
 #!/bin/bash
+# ====================================================================
+# dataParser
 # helmiriawan@student.tudelft.nl
 #
-
+# Purpose:
+# To parse the data from JSON and HTML files
+# 
+# Notes:
+# Run the flickrAPI.sh before this script
+#
 
 
 # Time check

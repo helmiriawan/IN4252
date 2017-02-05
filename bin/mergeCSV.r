@@ -1,6 +1,11 @@
-#!/usr/bin/R
+#!/bin/bash
+# ====================================================================
+# mergeCSV
 # helmiriawan@student.tudelft.nl
 #
+# Purpose:
+# To join the data from CSV files
+# 
 
 
 # Retrieve the data from CSV file

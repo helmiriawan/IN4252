@@ -1,6 +1,11 @@
-#!/usr/bin/R
+#!/bin/bash
+# ====================================================================
+# filterListPhoto
 # helmiriawan@student.tudelft.nl
 #
+# Purpose:
+# To filter the photos
+# 
 
 
 

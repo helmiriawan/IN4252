@@ -1,7 +1,15 @@
 #!/bin/bash
+# ====================================================================
+# flickrAPI
 # helmiriawan@student.tudelft.nl
 #
-
+# Purpose:
+# To get several information about photos by using Flickr API
+# 
+# Notes:
+# By default, the script will get random photos posted 1 week ago
+# You need to provide your own API key before using this script, see https://www.flickr.com/services/api/misc.api_keys.html
+#
 
 
 ## Configuration ##
@@ -11,14 +19,15 @@
 hFormat=`date -ud"1 week ago" | cut -c1-10`
 hUploadDateMax="$hFormat 23:49:59 UTC 2017"
 hUploadDateMin="$hFormat 00:00:01 UTC 2017"
+
 uploadDateMax=`date +%s -ud "$hUploadDateMax"`
 uploadDateMin=`date +%s -ud "$hUploadDateMin"`
 
 
 # Number of photos
-per_page=200
+perPage=200
 nMultiplier=100
-nPhotos=$((per_page*nMultiplier))
+nPhotos=$((perPage*nMultiplier))
 
 # API key - PUT YOUR API KEY HERE!
 apiKey=""
@@ -50,7 +59,7 @@ echo "##########################################################################
 counter=1;
 while [ $counter -le $nMultiplier ]; do
 	tTime=`shuf -i $uploadDateMin-$uploadDateMax -n 1`
-	curl https://api.flickr.com/services/rest/ -d method=flickr.photos.search -d api_key=$apiKey -d format=json -d nojsoncallback=1 -d min_upload_date=$uploadDateMin -d max_upload_date=$tTime -d per_page=$per_page -d page=1 | python -m json.tool > jsonDir/listPhoto$counter.json
+	curl https://api.flickr.com/services/rest/ -d method=flickr.photos.search -d api_key=$apiKey -d format=json -d nojsoncallback=1 -d min_upload_date=$uploadDateMin -d max_upload_date=$tTime -d per_page=$perPage -d page=1 | python -m json.tool > jsonDir/listPhoto$counter.json
 	counter=$((counter+1));
 done
 python listPhotoParser.py jsonDir/listPhoto'*'json > csvDir/listPhoto.csv
