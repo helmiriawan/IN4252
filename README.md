@@ -1,4 +1,4 @@
-# IN4252 - Web Science &amp; Engineering Course
+# IN4252 - Web Science &amp; Engineering
 
 This is the repository for the paper assignment
 
