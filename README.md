@@ -1,14 +1,14 @@
-# IN4252
-Web Science &amp; Engineering Course
+# IN4252 - Web Science &amp; Engineering Course
 
 This is the repository for the paper assignment
 
+## The Dataset
+The dataset used for the assigment is merge.csv. You can generate new dataset by using the scripts.
 
-## Dataset
-The dataset can be seen in dataset
+## The Scripts
 
-## Scripts
-The scripts can be seen in bin
+flickrAPI.sh for retrieving information from Flickr 
 
-## How to run the scripts
-Run the flickrAPI.sh to retrieve the data from Flickr and dataParser.sh to generate the dataset
+dataParser.sh for generating dataset
+
+dataAnalysis.sas for doing data analysis (using negative binomial regression)
